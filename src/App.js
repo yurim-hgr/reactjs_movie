@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 
 
+function Hello () {
+  
+  useEffect(() => {
+    console.log("created")
+    return () => console.log("des")
+    }, []);
+  return <h1>hihihi</h1>
+}
+
 function App() {
-  const [counter, setcount] = useState(0);
+  
+  const [showing, setShowing] = useState(false);
   const onclick = () => {
-    setcount((prev) => prev +1);
-  } 
-  console.log("again");
-  useEffect( () => {
-    console.log("once ");
-    
-  }, [] );
+    setShowing((prev) => !prev);
+  };
   return (
     <div>
-      <h1>count : {counter}</h1>
-      <button onClick={onclick}>click</button>
+      {showing ?  <Hello /> : null}
+      <button onClick={onclick}>{showing? "hide" : "show"}</button>
     </div>
   );
 }
