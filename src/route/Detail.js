@@ -29,12 +29,14 @@ function Detail() {
         <MovieDetail
           key={movies.id}
           id={movies.id}
-          medium_cover_image={movies.medium_cover_image}
-          title={movies.title}
-          year={movies.year}
+          coverImg={movies.medium_cover_image}
           rating={movies.rating}
-          summary={movies.summary}
+          runtime={movies.runtime}
+          description_full={movies.description_full}
+          background_image_original={movies.background_image_original}
+          title={movies.title}
           genres={movies.genres}
+          style_tag="Detail"
         />
       )}
     </div>
