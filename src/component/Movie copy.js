@@ -20,19 +20,16 @@ function Movie({
       ></img>
       <div>
         <h2 className={styles.movie__title}>
-          <Link to={`/movie/${id}`}>
-            {title.length > 35 ? `${title.slice(0, 35)}...` : title}
-          </Link>
+          <Link to={`/movie/${id}`}>{title} </Link>
         </h2>
-        <h3>
-          {year} (⭐{rating})
-        </h3>
-        <ul>
-          {genres.map((g) => (
-            <li key={g}>{g}</li>
-          ))}
-        </ul>
+        {year} (⭐{rating})
+        <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p>
       </div>
+      <ul>
+        {genres.map((g) => (
+          <li key={g}>{g}</li>
+        ))}
+      </ul>
     </div>
   );
 }
