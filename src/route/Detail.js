@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../component/Loading";
 import MovieDetail from "../component/MovieDetail";
 
 function Detail() {
@@ -24,7 +25,7 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <h2>Loading....</h2>
+        <Loading />
       ) : (
         <MovieDetail
           key={movies.id}

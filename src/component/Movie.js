@@ -13,21 +13,23 @@ function Movie({
 }) {
   return (
     <div className={styles.movie}>
-      <img
-        className={styles.movie__img}
-        src={medium_cover_image}
-        alt={title}
-      ></img>
+      <Link to={`/movie/${id}`}>
+        <img
+          className={styles.movie__img}
+          src={medium_cover_image}
+          alt={title}
+        ></img>
+      </Link>
       <div>
         <h2 className={styles.movie__title}>
           <Link to={`/movie/${id}`}>
-            {title.length > 35 ? `${title.slice(0, 35)}...` : title}
+            {title.length > 30 ? `${title.slice(0, 30)}...` : title}
           </Link>
         </h2>
-        <h3>
+        <h3 className={styles.movie__year}>
           {year} (⭐{rating})
         </h3>
-        <ul>
+        <ul className={styles.movie__genres}>
           {genres.map((g) => (
             <li key={g}>{g}</li>
           ))}
